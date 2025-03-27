@@ -1,0 +1,293 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Denis_Footwear.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <title>Denis_Footwear</title>
+
+    <style>
+        *{
+            margin:0; 
+        }
+        .Header
+        {
+            color:ghostwhite;
+            background-color:black;
+            width:100%;
+            height:50px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size:2.5rem;
+            text-align:center;
+        }
+        .MainMenu
+        {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size:1.3rem;
+            width:100%;
+            height:50px;
+            display:flex;
+            justify-content:flex-end;
+        }
+        .MainMenu a
+        {
+            color:darkred; 
+            margin: 10px 10px;  
+            margin-right: 25px;
+            margin-top: 28px;
+        }
+
+        .PuMenu1
+        {
+            font-size:1.5rem;
+            text-align:right;
+            margin-right:60px;
+            margin-top:20px;
+            word-spacing:15px;
+        }
+
+        .PuMenu1 a
+        {
+            text-decoration:none;
+            color:darkred;
+        }
+
+        /*Navigation In Images Css*/
+        /* Pu_Image */
+
+        .PuContent
+        {
+            display: flex;
+            align-items: center; 
+            justify-content: flex-start; 
+            gap: 50px; 
+            margin: 10px 20px;   
+            width:95%;
+        }
+        .ImgPu1
+        {
+            max-width: 100%;
+            height: 220px;
+            margin-bottom: 15px;
+        }   
+        .PuDescription
+        {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            text-align:justify;
+        }
+
+        /* Kolapuri_Image */
+
+        .KolapuriContent
+        {
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            gap:70px;
+            margin:10px 20px;
+            width:95%;
+        }
+       .ImgKolapuri1
+        {
+            max-width:100%;
+            height:260px;
+            margin-bottom: 15px;
+        }
+        .KolapuriDescripiton
+        {
+            font-size: 1.5em;
+            line-height:1.5;
+            text-align:justify;
+        } 
+
+        /* Sandle_Image */
+
+        .SandleContent
+        {
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            margin:20px 10px 0 -20px;
+            gap:20px;
+            width:95%;
+        }
+        .ImgSandle1
+        {
+            max-width:100%;
+            height:200px;
+            margin-bottom:15px;
+        }
+        .SandleDescripiton
+        {
+            font-size:1.5em;
+            line-height:1.5;
+            text-align:justify;
+        }
+
+        /* Lofars_Image */
+        .LofarContent
+        {
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            margin:30px 0 40px -20px;
+            gap: 20px;
+            width:95%;
+        }
+        .ImgLofar1
+        {
+            max-width:100%;
+            height:200px;
+            margin-top:20px;
+        }
+        .LofarDescripiton
+        {
+            font-size:1.5em;
+            line-height:1.5;
+            text-align:justify;
+        }
+
+        /* Shoes_Image */
+
+        .ShoesContent
+        {
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            margin:10px 10px;
+            gap:20px;
+            width:95%;
+        }
+        .ImgShoes1
+        {
+            max-width:100%;
+            max-height:100%;
+            margin-top:10px;
+        }
+        .ShoesDescripiton
+        {
+            font-size:1.5em;
+            line-height:1.5;
+            text-align:justify;
+        }
+
+        .Footer
+        {
+            color:ghostwhite;
+            background-color:black;
+            width:100%;
+            height:50px;
+            font-size:1.8rem;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align:right;
+            padding-top:10px;
+           
+        }
+        .Footerlbl
+        {
+            padding-right:70px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <div class="Header">
+                <asp:Label ID="lblheader" runat="server">Denis_Footwear</asp:Label>
+            </div>
+            
+            <div class="PuMenu1">
+                <asp:HyperLink ID="PuLink" runat="server" NavigateUrl="~/Pu.aspx">Pu</asp:HyperLink>
+                <asp:Label ID="PuLinkDisabled" runat="server" Text="Pu" Visible="false"></asp:Label>
+
+                <asp:HyperLink ID="KolapuriLink" runat="server" NavigateUrl="~/Kolapuri.aspx">Kolapuri</asp:HyperLink>
+                <asp:Label ID="KolapuriLinkDisabled" runat="server" Text="Kolapuri" Visible="false"></asp:Label>
+
+                <asp:HyperLink ID="SandleLink" runat="server" NavigateUrl="~/Sandle.aspx">Sandle</asp:HyperLink>
+                <asp:Label ID="SandleLinkDisabled" runat="server" Text="Sandle" Visible="false"></asp:Label>
+
+                <asp:HyperLink ID="LofarLink" runat="server" NavigateUrl="~/Lofar.aspx">Lofar</asp:HyperLink>
+                <asp:Label ID="LofarLinkDisabled" runat="server" Text="Lofar" Visible="false"></asp:Label>
+
+                <asp:HyperLink ID="ShoesLink" runat="server" NavigateUrl="~/Shoes.aspx">Shoes</asp:HyperLink>
+                <asp:Label ID="ShoesLinkDisabled" runat="server" Text="Shoes" Visible="false"></asp:Label>
+
+                <asp:HyperLink ID="LoginLink" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+                <asp:Label ID="LoginLinkDisabled" runat="server" Text="Login" Visible="false"></asp:Label>
+
+               <!-- <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="~/Registration.aspx">Registration</asp:HyperLink>
+                <asp:Label ID="RegisterLinkDisabled" runat="server" Text="Registration" Visible="false"></asp:Label>-->
+            </div>
+            
+
+ 
+            <div class="PuContent">
+                 <asp:Image CssClass="ImgPu1" ID="img1" runat="server" ImageUrl="~/Pu/pu.png" AlternateText="Pu_Chapple"/> 
+                 <div>
+                     <p class="PuDescription">
+                         Experience the perfect blend of durability and elegance with our premium PU (Polyurethane) Chappals. Designed for everyday use, these chappals are lightweight, flexible, and built to provide maximum comfort. The high-quality PU material ensures long-lasting performance while maintaining a sleek and modern appearance.Whether you're heading out for a casual outing or looking for the perfect companion for your daily wear, our PU chappals are the ideal choice. Available in various colors and designs, they cater to both men and women who value comfort without compromising on style.
+                     </p>
+                </div>
+             </div>
+ 
+
+             <div class="KolapuriContent">
+                 <asp:Image CssClass="ImgKolapuri1" ID="Img2" runat="server" ImageUrl="~/Kolapuri/kolapuri7.jpg" AlternateText="Kolapuri_Chapple"/>
+                 <div>
+                     <p class="KolapuriDescripiton">
+                         Kolhapuri chappals are a timeless blend of tradition and craftsmanship, handcrafted with precision to bring you unmatched comfort and style. Originating from the historic town of Kolhapur, these chappals are made using high-quality leather and designed with intricate detailing that reflects India’s rich cultural heritage. Made from genuine leather for long-lasting use. Designed to provide excellent comfort for everyday wear. Traditional patterns and styles that never go out of fashion. Perfect for casual outings, ethnic occasions, or pairing with modern wear.
+                     </p>
+                 </div>
+             </div>
+
+
+             <div class="SandleContent">
+                 <asp:Image CssClass="ImgSandle1" ID="Img3" runat="server" ImageUrl="Sandles/sandle1.png" AlternateText="Sandle"/>
+                 <div>
+                     <p class="SandleDescripiton">
+                         Discover the perfect balance of style and comfort with our premium range of sandals at Denis Footwear. Designed to suit both casual and semi-formal settings, our sandals are crafted to provide superior support and timeless appeal. Durable and lightweight construction for everyday wear. Ergonomically designed soles to ensure all-day comfort. Available in a variety of designs, colors, and patterns to match your style. Ideal for daily use, travel, or special occasions. Each pair is made with premium materials, including high-quality PU and other durable fabrics, ensuring long-lasting performance.
+                     </p>
+                 </div>
+             </div>
+
+
+             <div class="LofarContent">
+                  <asp:Image CssClass="ImgLofar1" ID="Img4" runat="server" ImageUrl="~/Lofars/lofar6.jpg" AlternateText="Lofar_Shoes"/>
+                  <div>
+                     <p class="LofarDescripiton">
+                         Discover timeless elegance with our premium collection of Loafers Shoes. Perfect for both casual and formal occasions, our loafers combine sleek design with unmatched comfort. Made with high-quality materials, they offer durability and a flawless fit. Whether you're heading to the office or a weekend outing, our loafers ensure you step out in style every time. Crafted from high-quality leather and synthetic options, ensuring durability and a polished finish. Available in classic and modern styles, our loafers are suitable for formal occasions, casual outings, and everything in between.
+                     </p>
+                 </div>
+             </div>
+
+
+             <div class="ShoesContent">    
+                 <asp:Image CssClass="ImgShoes1" ID="Img5" runat="server" ImageUrl="~/Shoes/shoes1.jpeg" AlternateText="Shoes"/>
+                 <div>
+                     <p class="ShoesDescripiton">
+                         Find your perfect fit with the versatile and stylish collection of Shoes at Denis Footwear. Designed to suit every occasion, our shoes combine functionality, elegance, and durability to keep you stepping forward in confidence. Each pair is made with precision and high-grade materials, ensuring long-lasting wear and superior comfort. From formal shoes to casual sneakers, our collection offers a wide range of styles to match your personality and preferences. Padded insoles, ergonomic designs, and breathable fabrics ensure your feet stay comfortable all day long. Engineered with strong, slip-resistant soles for stability and reliability in every step.
+                     </p>
+                 </div>
+             </div>
+
+            <br /><br />
+            <div class="Footer">
+                <asp:Label CssClass="Footerlbl" ID="lblfooter" runat="server">
+                    Created By : <b>denis_jethava</b>
+                </asp:Label>
+            </div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+    </form>
+</body>
+</html>
